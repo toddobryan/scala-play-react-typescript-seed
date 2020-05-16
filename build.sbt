@@ -1,15 +1,21 @@
-name := """scala-play-react-seed"""
+import sbt.Keys.libraryDependencies
 
-version := "1.0-SNAPSHOT"
+name := """scala-play-react-typescript-seed"""
 
-lazy val root = (project in file(".")).enablePlugins(PlayScala).settings(
-  watchSources ++= (baseDirectory.value / "public/ui" ** "*").get
-)
+version := "0.1-SNAPSHOT"
 
 resolvers += Resolver.sonatypeRepo("snapshots")
 
-scalaVersion := "2.12.8"
+scalaVersion := "2.13.1"
 
-libraryDependencies += guice
-libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "4.0.2" % Test
-libraryDependencies += "com.h2database" % "h2" % "1.4.199"
+lazy val root = (project in file(".")).enablePlugins(PlayScala).settings(
+  watchSources ++= (baseDirectory.value / "public/ui" ** "*").get,
+  libraryDependencies ++= Seq(
+    guice,
+    "com.h2database" % "h2" % "1.4.200",
+
+    "org.scalatestplus.play" %% "scalatestplus-play" % "5.1.0" % Test
+  )
+)
+
+
