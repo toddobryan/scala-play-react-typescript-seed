@@ -1,7 +1,8 @@
 package controllers
 
-import javax.inject._
+import java.time.LocalDateTime
 
+import javax.inject._
 import play.api.libs.json.Json
 import play.api.mvc._
 
@@ -9,6 +10,6 @@ import play.api.mvc._
 class HomeController @Inject()(cc: ControllerComponents) extends AbstractController(cc) {
 
   def appSummary = Action {
-    Ok(Json.obj("content" -> "Scala Play React Seed!"))
+    Ok(Json.obj("content" -> s"Scala Play React Typescript Seed! (${LocalDateTime.now()})"))
   }
 }
