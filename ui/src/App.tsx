@@ -43,8 +43,8 @@ export default function App() {
                     <h2>Check out the project on GitHub for more information</h2>
                     <h3>
                         <a target="_blank" rel="noopener noreferrer"
-                           href="https://github.com/yohangz/scala-play-react-seed">
-                            scala-play-react-seed
+                           href="https://github.com/toddobryan/scala-play-react-typescript-seed">
+                            scala-play-react-typescript-seed
                         </a>
                     </h3>
                 </div>
