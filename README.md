@@ -11,7 +11,7 @@ callbacks, etc.
 > deliver perfect development experience without CORS hassle. 
  
 Read more @ http://bit.ly/2A1AzEq and see the repo this is forked from at
-[Scala Play React Seed](https://github.com/yohangz/scala-play-react-seed)]
+[Scala Play React Seed](https://github.com/yohangz/scala-play-react-seed)
 for more documentation.
 
 ## Version Summary
