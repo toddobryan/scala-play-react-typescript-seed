@@ -11,31 +11,38 @@ import "./App.css";
 const playLogo = require("./images/play.svg") as string;
 const reactLogo = require("./images/react.svg") as string;
 const scalaLogo = require("./images/scala.svg") as string;
+const typescriptLogo = require("./images/typescript.svg") as string;
 
 export default function App() {
-    const [titleFromPlay, setTitleFromPlay] = useState('');
+    const [timeFromPlay, setTimeFromPlay] = useState('');
+
+    const awaitAndSetTime = async () => {
+        const time = await Client.getTimeFromPlay();
+        setTimeFromPlay(time.content)
+    };
 
     useEffect(() => {
-        const awaitAndSetTitle = async () => {
-            const summary = await Client.getSummary();
-            setTitleFromPlay(summary.content)
-        };
-        awaitAndSetTitle();
+        awaitAndSetTime();
     }, []);
 
     return (
         <Router>
             <div className="App">
-                <h1>Welcome to {titleFromPlay}</h1>
+                <h1>Welcome to Scala Play React Typescript Seed!</h1>
+                <div>Time loaded from Play server is now: {timeFromPlay}</div>
+                <div><button onClick={() => awaitAndSetTime()}>Reset</button></div>
                 <nav>
                     <Link to="scala">
-                        <img width={400} height={400} src={scalaLogo} alt="Scala Logo"/>
+                        <img width={300} height={300} src={scalaLogo} alt="Scala Logo"/>
                     </Link>
                     <Link to="play">
-                        <img width={400} height={400} src={playLogo} alt="Play Framework Logo"/>
+                        <img width={300} height={300} src={playLogo} alt="Play Framework Logo"/>
                     </Link>
                     <Link to="react">
-                        <img width={400} height={400} src={reactLogo} alt="React Logo"/>
+                        <img width={300} height={300} src={reactLogo} alt="React Logo"/>
+                    </Link>
+                    <Link to="typescript">
+                        <img width={300} height={300} src={typescriptLogo} alt="TypeScript Logo"/>
                     </Link>
                 </nav>
                 <Tech/>
@@ -54,6 +61,6 @@ export default function App() {
 }
 
 function Tech() {
-    const match: match<{'tech': string}> | null = useRouteMatch('/:tech');
-    return <div>Current Route: {match?.params['tech'] || 'No match'}</div>;
+    const path: match<{'tech': string}> | null = useRouteMatch('/:tech');
+    return <div>Current Route: {path?.params['tech'] || 'No match'}</div>;
 }

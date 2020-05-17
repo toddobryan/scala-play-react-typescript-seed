@@ -1,14 +1,14 @@
 
 const Client = {
-    getSummary,
+    getTimeFromPlay,
 };
 export default Client;
 
-type Summary = {content: string};
+type TimeJson = {content: string};
 
-async function getSummary() : Promise<Summary> {
-    const response = checkStatus(await fetch("/api/summary"));
-    return await parseJson<Summary>(response);
+async function getTimeFromPlay() : Promise<TimeJson> {
+    const response = checkStatus(await fetch("/api/time"));
+    return await parseJson<TimeJson>(response);
 }
 
 class PlayError extends Error {
