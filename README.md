@@ -11,10 +11,7 @@ callbacks, etc.
 > deliver perfect development experience without CORS hassle. 
  
 Read more @ http://bit.ly/2A1AzEq and see the repo this is forked from at
-
-[![Scala Play React Seed](https://github.com/yohangz/scala-play-react-seed/blob/master/react.png)](
-http://bit.ly/2A1AzEq)
-
+[Scala Play React Seed](https://github.com/yohangz/scala-play-react-seed)]
 for more documentation.
 
 ## Version Summary
@@ -25,17 +22,19 @@ for more documentation.
 * [React-Scripts: 3.4.1](https://github.com/facebook/create-react-app)
 * [TypeScript: 3.9.2](https://www.typescriptlang.org/)
 
-The easiest way to get this to run is to use 2 terminal. In the first, `cd` to the project
-directory and run
+The easiest way to get this to run is to use 2 terminals. In the first, make sure you're in
+the project's root directory and run:
 ```asp
 $ ./sbt run
 ```
 This will open a browser window with an error. Hang on...
 
-In a second terminal,
+In a second terminal, also at the project's root directory,
 ```asp
 $ cd ui
 $ npm start
 ```
-Now you should see a running app. Notice that the text after "Welcome to " in the title
-is actually loaded by making a call to the Play app and that clicking on the logos
+Now you should see a running app. Notice that the time near the top is actually loaded
+by making a call to the Play app. You can change the path by clicking on the logos,
+but only the text after "Current Route" is updated. Similarly, you can click the time's
+Reset button, but only the time is updated, not the whole page.
