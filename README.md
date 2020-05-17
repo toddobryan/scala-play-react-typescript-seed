@@ -1,5 +1,3 @@
-[![MIT License][license-badge]][LICENSE]
-
 # Scala Play React TypeScript Seed
 
 A fork from [yohangz/scala-play-react-seed](https://github.com/yohangz/scala-play-react-seed) that 
